@@ -67,18 +67,34 @@ public class revision {
             return candidate;
         return -1;
     }
+
+    public static int singleNumber(int[] arr){
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int i: arr){
+            map.put(i,map.getOrDefault(i,0)+1);
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if(map.get(arr[i]) == 1){
+                return arr[i];
+            }
+        }
+        return -1;
+    }
     public static void main(String[] args) {
-        int[] arr = {2,3,6,8,5};
-        int[] result = twoSum(arr,13);
-        System.out.println(Arrays.toString(result));
+//        int[] arr = {2,3,6,8,5};
+//        int[] result = twoSum(arr,13);
+//        System.out.println(Arrays.toString(result));
+//
+//        int[] arr2 = {2,1,0,2,1};
+//        int[] result2 = sortArrayOf012(arr2);
+//        System.out.println(Arrays.toString(result2));
+//
+//        int[] arr3 = {7, 0, 0, 1, 7, 7, 2, 7, 7};
+//        int result3 = majorityElement(arr3);
+//        System.out.println(result3);
 
-        int[] arr2 = {2,1,0,2,1};
-        int[] result2 = sortArrayOf012(arr2);
-        System.out.println(Arrays.toString(result2));
-
-        int[] arr3 = {7, 0, 0, 1, 7, 7, 2, 7, 7};
-        int result3 = majorityElement(arr3);
-        System.out.println(result3);
-
+        int[] arr4 = {2,1,0,2,1};
+        int result4 = singleNumber(arr4);
+        System.out.println(result4);
     }
 }
