@@ -88,6 +88,21 @@ public class revision {
         return xor;
     }
 
+    public static int kadane(int[] arr){
+        int maxi = Integer.MIN_VALUE;
+        int prev_sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            prev_sum += arr[i];
+            if( prev_sum > maxi){
+                maxi = prev_sum;
+            }
+            if(prev_sum < 0){
+                prev_sum = 0;
+            }
+        }
+        return maxi;
+    }
+
 
     public static void main(String[] args) {
         int[] arr = {2,3,6,8,5};
@@ -109,6 +124,10 @@ public class revision {
         int[] arr5 = {4,2,0,1,2,1,0};
         int result5 = singleNumber2(arr5);
         System.out.println(result5);
+
+        int[] arr6 = {2, 3, 5, -2, 7, -4};
+        int result6 = kadane(arr6);
+        System.out.println(result6);
 
     }
 }
