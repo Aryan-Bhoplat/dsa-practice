@@ -103,6 +103,15 @@ public class revision {
         return maxi;
     }
 
+    public static int buySellStocks(int[] arr){
+        int maxProfit = 0, minPrice = Integer.MAX_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            minPrice = Math.min(minPrice, arr[i]);
+            int profit = arr[i] - minPrice;
+            maxProfit = Math.max(maxProfit, profit);
+        }
+        return maxProfit;
+    }
 
     public static void main(String[] args) {
         int[] arr = {2,3,6,8,5};
@@ -128,6 +137,11 @@ public class revision {
         int[] arr6 = {2, 3, 5, -2, 7, -4};
         int result6 = kadane(arr6);
         System.out.println(result6);
+
+        int[] arr7 = {7,1,5,3,6,4};
+        int result7 = buySellStocks(arr7);
+        System.out.println(result7);
+
 
     }
 }
