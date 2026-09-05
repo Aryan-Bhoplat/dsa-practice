@@ -1,8 +1,6 @@
 package arrayMedium;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 public class revision {
     public static int[] twoSum(int[] arr, int target){
@@ -113,35 +111,51 @@ public class revision {
         return maxProfit;
     }
 
+    public static List<Integer> leaderInArray(int[] arr){
+        List<Integer> result = new ArrayList<>();
+        int max = arr[arr.length-1];
+        result.add(max);
+        for (int i = arr.length-2 ; i >= 0; i--) {
+            if(arr[i] > max){
+                result.add(arr[i]);
+                max = arr[i];
+            }
+        }
+        Collections.reverse(result);
+        return result;
+    }
+
     public static void main(String[] args) {
-        int[] arr = {2,3,6,8,5};
-        int[] result = twoSum(arr,13);
-        System.out.println(Arrays.toString(result));
+//        int[] arr = {2,3,6,8,5};
+//        int[] result = twoSum(arr,13);
+//        System.out.println(Arrays.toString(result));
+//
+//        int[] arr2 = {2,1,0,2,1};
+//        int[] result2 = sortArrayOf012(arr2);
+//        System.out.println(Arrays.toString(result2));
+//
+//        int[] arr3 = {7, 0, 0, 1, 7, 7, 2, 7, 7};
+//        int result3 = majorityElement(arr3);
+//        System.out.println(result3);
+//
+//        int[] arr4 = {2,1,0,2,1};
+//        int result4 = singleNumber(arr4);
+//        System.out.println(result4);
+//
+//        int[] arr5 = {4,2,0,1,2,1,0};
+//        int result5 = singleNumber2(arr5);
+//        System.out.println(result5);
+//
+//        int[] arr6 = {2, 3, 5, -2, 7, -4};
+//        int result6 = kadane(arr6);
+//        System.out.println(result6);
+//
+//        int[] arr7 = {7,1,5,3,6,4};
+//        int result7 = buySellStocks(arr7);
+//        System.out.println(result7);
 
-        int[] arr2 = {2,1,0,2,1};
-        int[] result2 = sortArrayOf012(arr2);
-        System.out.println(Arrays.toString(result2));
-
-        int[] arr3 = {7, 0, 0, 1, 7, 7, 2, 7, 7};
-        int result3 = majorityElement(arr3);
-        System.out.println(result3);
-
-        int[] arr4 = {2,1,0,2,1};
-        int result4 = singleNumber(arr4);
-        System.out.println(result4);
-
-        int[] arr5 = {4,2,0,1,2,1,0};
-        int result5 = singleNumber2(arr5);
-        System.out.println(result5);
-
-        int[] arr6 = {2, 3, 5, -2, 7, -4};
-        int result6 = kadane(arr6);
-        System.out.println(result6);
-
-        int[] arr7 = {7,1,5,3,6,4};
-        int result7 = buySellStocks(arr7);
-        System.out.println(result7);
-
-
+        int[] arr8 = {10, 22, 12, 3, 0, 6};
+        List<Integer> result8 = leaderInArray(arr8);
+        System.out.println(result8);
     }
 }
