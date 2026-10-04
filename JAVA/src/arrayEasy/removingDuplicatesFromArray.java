@@ -16,7 +16,7 @@ public class removingDuplicatesFromArray {
 
     }
     public static void main(String[] args) {
-        int[] arr = {};
+        int[] arr = {1,2,4,3,3,5};
         int result = function(arr);
         System.out.println(result);
         for (int i = 0; i < result;i++){
