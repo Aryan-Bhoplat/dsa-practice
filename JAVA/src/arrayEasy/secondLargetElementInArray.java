@@ -14,6 +14,7 @@ public class secondLargetElementInArray {
                 second = arr[i];
             }
         }
+        if(second == Integer.MIN_VALUE) return -1;
         return second;
     }
     public static void main(String[] args) {
