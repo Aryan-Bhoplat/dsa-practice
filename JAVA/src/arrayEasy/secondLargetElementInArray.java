@@ -17,7 +17,7 @@ public class secondLargetElementInArray {
         return second;
     }
     public static void main(String[] args) {
-        int[] arr = {12, 45, 7, 23, 45, 19};
+        int[] arr = {10,10,10,10,10};
         System.out.println("Second Largest: "+function(arr));
     }
 }
