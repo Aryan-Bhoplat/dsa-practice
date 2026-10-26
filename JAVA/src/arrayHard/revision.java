@@ -9,6 +9,10 @@ public class revision {
         int[] nums =  {-1, 0, 1, 2, -1, -4};
         List<List<Integer>> result = threeSum(nums);
         System.out.println(result);
+
+        int[] nums2 = {1,0,2,1,0};
+        sortColors(nums2);
+        System.out.println(Arrays.toString(nums2));
     }
     public static List<List<Integer>> threeSum(int[] nums) {
 
@@ -44,6 +48,31 @@ public class revision {
             }
         }
         return result;
+    }
+
+    public static void sortColors(int[] nums){
+        int n = nums.length;
+
+        int low = 0, mid = 0;
+        int high = n - 1;
+        while(mid <= high){
+            if(nums[mid] == 0){
+                int temp = nums[mid];
+                nums[mid] = nums[low];
+                nums[low] = temp;
+
+                low++;
+                mid++;
+            } else if( nums[mid] == 1){
+                mid++;
+            } else {
+                int temp = nums[mid];
+                nums[mid] = nums[high];
+                nums[high] = temp;
+
+                high--;
+            }
+        }
     }
 
 
